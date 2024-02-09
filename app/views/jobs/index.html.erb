@@ -1,0 +1,17 @@
+<h1>List of jobs</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @jobs.each do |j| %>
+    <tr>
+      <td><%= j.name %></td>
+      <td><%= j.status %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
