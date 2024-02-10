@@ -1,0 +1,13 @@
+<h1>New job</h1>
+<%= form_with model: @job do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br/>
+  <%= form.label :status %>
+  <%= form.text_field :status %>
+  <br/>
+  <%= form.label :tag %>
+  <%= form.collection_select :tag_id, @tags, :id, :name %>
+  <br/>
+  <%= form.submit "Save job" %>
+<% end %>
