@@ -1,13 +1,18 @@
-<h1>New job</h1>
-<%= form_with model: @job do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br/>
-  <%= form.label :status %>
-  <%= form.text_field :status %>
-  <br/>
-  <%= form.label :tag %>
-  <%= form.collection_select :tag_id, @tags, :id, :name %>
-  <br/>
-  <%= form.submit "Save job" %>
-<% end %>
+<section class="bg-white p-20 rounded-lg shadow-2xl w-96">
+  <h1 class="text-3xl font-bold mb-6">New job</h1>
+  <%= form_with model: @job do |form| %>
+    <div class="mb-2">
+      <%= form.label :name, "Role", class: "block font-semibold" %>
+      <%= form.text_field :name, class: "w-full rounded" %>
+    </div>
+    <div class="mb-2">
+      <%= form.label :status, class: "block font-semibold" %>
+      <%= form.text_field :status, class: "w-full rounded" %>
+    </div>
+    <div class="mb-2">
+      <%= form.label :tag, class: "block font-semibold" %>
+      <%= form.collection_select :tag_id, @tags, :id, :name, {}, { class: "w-full rounded" } %>
+    </div>
+    <%= form.submit "Save job", class: "mt-7 bg-black text-white rounded w-full py-3 font-semibold" %>
+  <% end %>
+</section>

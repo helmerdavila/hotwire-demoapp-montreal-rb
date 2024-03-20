@@ -1,20 +1,22 @@
-<h1>List of jobs</h1>
-<%= link_to 'Create new job', new_job_path %>
-<table>
-  <thead>
+<section class="bg-white p-20 rounded-lg shadow-2xl w-full">
+  <h1 class="text-3xl font-bold">List of jobs</h1>
+  <%= link_to 'Create new job', new_job_path, class: "block py-6 underline" %>
+  <table class="border border-collapse border-slate-400 w-96">
+    <thead>
     <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Tag</th>
+      <th class="border border-slate-400 text-left px-2 py-3">Name</th>
+      <th class="border border-slate-400 text-left px-2 py-3">Status</th>
+      <th class="border border-slate-400 text-left px-2 py-3">Tag</th>
     </tr>
-  </thead>
-  <tbody>
-  <% @jobs.each do |j| %>
-    <tr>
-      <td><%= j.name %></td>
-      <td><%= j.status %></td>
-      <td><%= j.tag.name %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @jobs.each do |j| %>
+      <tr>
+        <td class="border border-slate-400 text-left px-2 py-3"><%= j.name %></td>
+        <td class="border border-slate-400 text-left px-2 py-3"><%= j.status %></td>
+        <td class="border border-slate-400 text-left px-2 py-3"><%= j.tag.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>
